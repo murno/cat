@@ -6,8 +6,9 @@ cat(FILE *f)
 {
 	int c;
 
-	while ((c = getc(f)) != EOF)
+	while ((c = getc(f)) != EOF) {
 		putchar(c);
+	}
 }
 
 int
@@ -17,9 +18,9 @@ main(int argc, char *argv[])
 	FILE *f;
 
 	status = EXIT_SUCCESS;
-	if (argc == 1)
+	if (argc == 1) {
 		cat(stdin);
-	else {
+	} else {
 		for (i = 1; i < argc; ++i) {
 			if ((f = fopen(argv[i], "r")) == NULL) {
 				perror(argv[i]);
